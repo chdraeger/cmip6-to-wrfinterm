@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "cmip6-to-wrfinterm"
+version = "0.1.0"
+description = ""
+authors = ["chdraeger <christina.draeger@posteo.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.2"
+netcdf4 = "^1.6.5"
+mkl-service = "^2.4.1"
+mkl-fft = "^1.3.8"
+certifi = "^2024.6.2"
+bottleneck = "^1.3.8"
+cftime = "^1.6.3"
+mkl-random = "^1.2.4"
+numexpr = "^2.10.0"
+numpy = "^1.26.4"
+packaging = "^24.0"
+pyparsing = "^3.1.2"
+python-dateutil = "^2.9.0.post0"
+pytz = "^2024.1"
+scipy = "^1.13.1"
+six = "^1.16.0"
+typing-extensions = "^4.12.1"
+xarray = "^2024.5.0"
+zarr = "^2.18.2"
+gcsfs = "^2024.6.0"
+matplotlib = "^3.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

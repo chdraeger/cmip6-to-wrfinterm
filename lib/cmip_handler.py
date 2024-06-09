@@ -124,7 +124,7 @@ class CMIPHandler(object):
                 # CMIP6 regular
                 if not(self.model_name=='BCMM'):
                     utils.write_log(print_prefix+'Loading '+self.fn_lst[idx])
-                    ds=xr.open_dataset(self.fn_lst[idy]) ###!!!!!! CHANGED TO IDY from IDF
+                    ds=xr.open_dataset(self.fn_lst[idy]) ###!!!!!! CHANGED TO idy from idf
                     idf=idf+1
                     
                 # need interpolation coefficients

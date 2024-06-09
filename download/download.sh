@@ -48,11 +48,11 @@ wget http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/DKRZ/MPI-ESM1-2-H
 #------- # tos: SST (3hr)
 wget http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/DKRZ/MPI-ESM1-2-HR/ssp585/r1i1p1f1/3hr/tos/gn/v20190710/tos_3hr_MPI-ESM1-2-HR_ssp585_r1i1p1f1_gn_${STRTDATE_SST}-${ENDDATE}.nc
 # remap sst to latlong
-cdo remapnn,grid.txt tos_3hr_MPI-ESM1-2-HR_ssp585_r1i1p1f1_gn_209501010300-210001010000.nc tos_3hr_latlong.nc
+cdo remapnn,grid.txt tos_3hr_MPI-ESM1-2-HR_ssp585_r1i1p1f1_gn_${STRTDATE_SST}-${ENDDATE}.nc tos_3hr_latlong.nc
 # merge from 3hr to 6hr averages
 ncra --mro -d time,,,2,2 tos_3hr_latlong.nc  tos_6hr_latlong_degC.nc
 # change unit from degC to K
-cdo addc,+273.15 -setattribute,tos@units=K tos_6hr_latlong_degC.nc tos_6hrPlevPt_MPI-ESM1-2-HR_ssp585_r1i1p1f1_gn_209501010300-210001010000.nc
+cdo addc,+273.15 -setattribute,tos@units=K tos_6hr_latlong_degC.nc tos_6hrPlevPt_MPI-ESM1-2-HR_ssp585_r1i1p1f1_gn_${STRTDATE}-${ENDDATE}.nc
 
 
 # ----- Land Surface data

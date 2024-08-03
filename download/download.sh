@@ -1,10 +1,10 @@
 #!/bin/sh
 # Download CMIP6 data (6-hourly). Process SST to latlong and to the same time resolution.
 
-STRTDATE=209501010600
-STRTDATE_SST=209501010300
-ENDDATE=210001010000
-ssp='ssp585' # ssp585, ssp245
+STRTDATE=202001010600
+STRTDATE_SST=202001010300
+ENDDATE=202501010000
+ssp='ssp370' # ssp585, ssp245, ssp370, ssp126
 
 
 # ----- 3D fields
@@ -62,3 +62,5 @@ wget http://esgf3.dkrz.de/thredds/fileServer/cmip6/ScenarioMIP/DKRZ/MPI-ESM1-2-H
 # previously cropping, but does not work with current (Github-downloaded) python code
 # ncks -d lat,31,80 -d lon,175,300 hus_6hrPlevPt_MPI-ESM1-2-HR_${ssp}_r1i1p1f1_gn_${STRTDATE}-${ENDDATE}.nc -O cropped/hus_6hrPlevPt_MPI-ESM1-2-HR_${ssp}_r1i1p1f1_gn_${STRTDATE}-${ENDDATE}.nc
 # takes 4 min for 3d
+
+# afterwards: for f in MPI*; do mv "$f" "$(echo "$f" | sed s/HR:2/HR_2/)"; done
